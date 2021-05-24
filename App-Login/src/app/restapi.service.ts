@@ -19,14 +19,17 @@ doLogin(email:string,password:string){
 
 
   public login(email: String, password: string): Observable<void> {
-    let k=email.concat(" "+password);
+    let k=email.concat(" "+password );
     return this.http.get<void>(`${this.apiServerUrl}/login/auth/${k}`);
   }
-
-  getUsers() {
-    let username='pfa@gmail.com'
-    let password='pfapfa'
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-   return  this.http.get("http://localhost:9001/getUsers",{headers});
-  }
+  public login2(user: User): Observable<User> {
+    return this.http.post<User>(`${this.apiServerUrl}/login/add`, user);
+  }
+   public safe(): Observable<User> {
+    return this.http.get<User>(`${this.apiServerUrl}/login/safe`);
+  }
+  public logout(): Observable<void> {
+    return this.http.get<void>(`${this.apiServerUrl}/login/logout`);
+  }
+  
 }
