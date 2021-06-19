@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   users:any;
   public mail: String;
   public user: User;
-
+symptome:String;
   constructor(private service: RestapiService,private router:Router) { }
 
   ngOnInit() {
@@ -64,4 +64,19 @@ let resp=this.service.getUsers();
 resp.subscribe(data=>this.users=data);
   }
 */
+
+public Predict(symptome: String): void {
+    
+  this.service.predict(symptome).subscribe(
+    (response: void) => {
+      alert(response);
+      this.router.navigate(["/home"])
+    },
+    
+    (error: HttpErrorResponse) => {
+      alert("Erreur!! Try Again");
+    }
+  );
+}
+
 }

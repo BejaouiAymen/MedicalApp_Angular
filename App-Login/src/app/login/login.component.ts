@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       },
       
       (error: HttpErrorResponse) => {
-        alert(error.message);
+        alert("Email or Password est invalide");
       }
     );
   }

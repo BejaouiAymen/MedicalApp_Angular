@@ -60,8 +60,22 @@ http://www.tooplate.com/view/2080-minimax
 				<h1>PFA_bert <strong>Prediction System</strong></h1>
 				<p>Vous êtes les bienvenus sur notre site Web, nous apprécions beaucoup votre visite.
 Cliquez sur ce bouton et exprimez ce que vous ressentez et laissez-nous prendre soin de vous.
-Nous allons prédire quelle maladie vous avez.</p>
-				<a href="#service" class="btn btn-default smoothScroll">SYMPTÔME</a>
+Nous allons prédire quelle maladie que peut-etre vous les avez.</p>
+
+<form  #addForm="ngForm" >
+	
+   <div class="form-group">
+	  <label for="symptome">SYMPTÔME</label>
+	  <input type="text" ngModel name="symptome" class="form-control" [(ngModel)]="symptome" id="symptome" placeholder="saisir SYMPTÔME" required>
+   </div>
+	
+  <div class="form-group row">
+	  <div class="col-8 offset-4">
+<input type="submit" class="btn btn-primary btn-lg" name="Login" id="go" value="PREDICT" (click)="Predict(symptome)">
+	  </div>  
+  </div>		      
+</form>
+				<!--<a href="#service" class="btn btn-default smoothScroll">SYMPTÔME</a>-->
 			</div>
 		</div>
 	</div>

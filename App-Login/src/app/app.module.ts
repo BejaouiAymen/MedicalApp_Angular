@@ -9,12 +9,14 @@ import { RestapiService } from './restapi.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AuthInterceptor } from './auth.interceptor';
+import { AppComponentAdmin } from './admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    AppComponentAdmin
   ],
   imports: [
     BrowserModule,
